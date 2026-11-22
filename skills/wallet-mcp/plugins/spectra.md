@@ -140,14 +140,14 @@ With a `receiver`, `spectra_prepare_pt_trade` and `spectra_prepare_redeem` retur
       "description": "Approve the Spectra router to spend exactly 10 <token>",
       "chain_id": 8453,
       "to": "<quote.token_in.address>",
-      "data": "0x095ea7b3000000000000000000000000c03309de321a4d3df734f5609b80cc731ae28e6d…",
+      "data": "0x095ea7b3000000000000000000000000766da57e22058933b4e758b2e6cc86e3f4dde4a7…",
       "value": "0"
     },
     {
       "step": 2,
       "description": "Buy <PT symbol> with 10 <token> through the Spectra router",
       "chain_id": 8453,
-      "to": "0xC03309DE321A4D3df734F5609B80cC731ae28e6D",
+      "to": "0x766Da57E22058933B4E758B2E6CC86E3F4dDe4a7",
       "data": "0x24856bc3…",
       "value": "0"
     }
@@ -224,12 +224,12 @@ If a check fails, do not submit: stop and give the user the market's app link. T
 
 | Network | `chain_id` | Spectra chain slug (market ids) | Wallet MCP `chain` | Spectra router (the last step's `to`) |
 |---|---|---|---|---|
-| Base | 8453 | `base` | `base` | `0xC03309DE321A4D3df734F5609B80cC731ae28e6D` |
-| Ethereum | 1 | `mainnet` | `ethereum` | `0xC03309DE321A4D3df734F5609B80cC731ae28e6D` |
-| Arbitrum One | 42161 | `arbitrum` | `arbitrum` | `0x38b9B4884a5581E96eD3882AA2f7449BC321786C` |
-| OP Mainnet | 10 | `optimism` | `optimism` | `0x8A92294ffCFe469a3DF4A85c76a0B0d2B3292119` |
-| BNB Smart Chain | 56 | `bsc` | `bsc` | `0x8A92294ffCFe469a3DF4A85c76a0B0d2B3292119` |
-| Avalanche C-Chain | 43114 | `avalanche` | `avalanche` | `0x8A92294ffCFe469a3DF4A85c76a0B0d2B3292119` |
+| Base | 8453 | `base` | `base` | `0x766Da57E22058933B4E758B2E6CC86E3F4dDe4a7` |
+| Ethereum | 1 | `mainnet` | `ethereum` | `0xbF8b3586E99f24732a41AE80466FC609CfD22CFa` |
+| Arbitrum One | 42161 | `arbitrum` | `arbitrum` | `0x73031f41b43500168Ac31198775D49Ca14FB7AaB` |
+| OP Mainnet | 10 | `optimism` | `optimism` | `0xA6D7Cb67622157258B4786f4a3a0241EC4787Fe8` |
+| BNB Smart Chain | 56 | `bsc` | `bsc` | `0x55a9cdD9b116e4dd2518406c176d95F075C81d6B` |
+| Avalanche C-Chain | 43114 | `avalanche` | `avalanche` | `0x308C7Ff9017BeF0663B62899566829dc2FE0363A` |
 
 - Ethereum's Spectra slug is `mainnet`, but its Wallet MCP chain string is `ethereum`. Always map from `chain_id`.
 - Spectra also runs on Sonic (146), HyperEVM (999), Katana (747474), Flare (14), Monad (143), Sei (1329) and Hemi (43111), and has order-book markets on Stellar. Wallet MCP does not support those networks: reads are fine, but do not call `send_calls`. Give the app link instead. Spectra has no router on Polygon, Robinhood Chain or Base Sepolia.
